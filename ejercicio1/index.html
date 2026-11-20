@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador factura de ventas</title>
+
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            margin: 0;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        .tabla-superior {
+            width: 60%;
+        }
+
+        .tabla-detalle {
+            width: 60%;
+            margin-top: 0;
+            table-layout: fixed;
+        }
+
+        .tabla-detalle th,
+        .tabla-detalle td {
+            height: 30px;
+        }
+
+        /* Filas vacías más pequeñas */
+        .tabla-detalle .fila-vacia td {
+            height: 20px;
+        }
+
+        .tabla-detalle th:nth-child(1) {
+            width: 10%;
+        }
+
+        .tabla-detalle th:nth-child(2) {
+            width: 10%;
+        }
+
+        .tabla-detalle th:nth-child(3) {
+            width: 58%;
+        }
+
+        .tabla-detalle th:nth-child(4) {
+            width: 10%;
+        }
+
+        .tabla-detalle th:nth-child(5) {
+            width: 12%;
+        }
+
+        /* Campos superiores al 100% */
+        #txt-cliente,
+        #txt-precio,
+        #txt-cantidad {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="number"] {
+            width: 98%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+<table border="1" class="tabla-superior">
+    <thead>
+        <tr>
+            <th colspan="7" bgcolor="#DCE8F5">
+                Simulador de factura de ventas
+            </th>
+        </tr>
+
+        <tr>
+            <td>Cliente:</td>
+            <td>
+                <input type="text" name="cliente" id="txt-cliente">
+            </td>
+            <td>Fecha:</td>
+            <td colspan="2">
+                <input type="date" name="fecha" id="txt-fecha" style="width: 98%;">
+            </td>
+            <td>N.º Factura:</td>
+            <td align="center">000001</td>
+        </tr>
+
+        <tr>
+            <td>Producto:</td>
+            <td>
+                <select name="Producto" id="select-producto" style="width: 100%;">
+                    <option value="">--Seleccione un producto--</option>
+                </select>
+            </td>
+
+            <td>P.V.P:</td>
+            <td>
+                <input type="number" name="precio" id="txt-precio" readonly>
+            </td>
+
+            <td>Cantidad:</td>
+            <td>
+                <input type="number" name="cantidad" id="txt-cantidad">
+            </td>
+
+            <td align="center">
+                <button id="btn-agregar">Agregar</button>
+            </td>
+        </tr>
+    </thead>
+</table>
+
+<table border="1" class="tabla-detalle">
+    <thead>
+        <tr>
+            <th colspan="5" bgcolor="#DCEFEA" align="left">
+                Detalle de productos
+            </th>
+        </tr>
+
+        <tr>
+            <th>Ítem</th>
+            <th>Cantidad</th>
+            <th>Producto</th>
+            <th>Precio unitario</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody id="tb-id-detalle-factura">
+    </tbody>
+
+<tbody>
+    <tr>
+        <td colspan="3" rowspan="4" bgcolor="#F3F5F7"></td>
+        <td bgcolor="#FCEBD8">Subtotal:</td>
+        <td align="right">
+            <input type="number" id="txt-subtotal" readonly placeholder="0.00">
+        </td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#FCEBD8">Descuento:</td>
+        <td align="right">
+            <input type="number" id="txt-descuento" readonly placeholder="0.00">
+        </td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#FCEBD8">IVA (15%):</td>
+        <td align="right">
+            <input type="number" id="txt-iva" readonly placeholder="0.00">
+        </td>
+    </tr>
+
+    <tr>
+        <td bgcolor="#FCEBD8">Total:</td>
+        <td align="right">
+            <input type="number" id="txt-total" readonly placeholder="0.00">
+        </td>
+    </tr>
+</tbody>
+
+       
+</table>
+<script src="./src/app.js"></script>
+</body>
+</html>
