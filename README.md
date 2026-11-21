@@ -3,4 +3,4 @@
 
 - [Ejercicio 1 - Simulador de factura de ventas](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio1/)
 - [Ejercicio 2 - Cajero bancario inteligente](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio2/)
-- [Ejercicio 3 - Sistema de turnos de una clínica](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio3/)
+
