@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de parqueadero con cobro por hora</title>
+
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            margin: 0;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        .tabla-superior {
+            width: 60%;
+            min-width: 700px;
+        }
+
+        .tabla-detalle {
+            width: 60%;
+            min-width: 700px;
+            margin-top: 0;
+            table-layout: fixed;
+        }
+
+        .tabla-detalle th,
+        .tabla-detalle td {
+            height: 30px;
+        }
+
+        .tabla-detalle th:nth-child(1) {
+            width: 15%;
+        }
+
+        .tabla-detalle th:nth-child(2) {
+            width: 45%;
+        }
+
+        .tabla-detalle th:nth-child(3) {
+            width: 40%;
+        }
+
+        /* Campos de texto y números al 100% de su celda */
+        input[type="text"],
+        input[type="number"] {
+            width: 98%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+<table border="1" class="tabla-superior">
+    <thead>
+        <tr>
+            <th colspan="5" bgcolor="#DCE8F5">
+                Control de parqueadero con cobro por hora
+            </th>
+        </tr>
+
+        <tr>
+            <td>Placa (entrada):</td>
+            <td>
+                <input type="text" name="placaEntrada" id="txt-placa-entrada" placeholder="Ejemplo: ABC123">
+            </td>
+            <td>Hora de entrada:</td>
+            <td>
+                <input type="number" name="horaEntrada" id="txt-hora-entrada" placeholder="0 - 23" min="0" max="23">
+            </td>
+            <td align="center">
+                <button id="btn-entrada">Registrar entrada</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Placa (salida):</td>
+            <td>
+                <input type="text" name="placaSalida" id="txt-placa-salida" placeholder="Ejemplo: ABC123">
+            </td>
+            <td>Hora de salida:</td>
+            <td>
+                <input type="number" name="horaSalida" id="txt-hora-salida" placeholder="0 - 23" min="0" max="23">
+            </td>
+            <td align="center">
+                <button id="btn-salida">Registrar salida</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Tarifa:</td>
+            <td colspan="4">$ 0.75 por hora</td>
+        </tr>
+    </thead>
+</table>
+
+<table border="1" class="tabla-detalle">
+    <thead>
+        <tr>
+            <th colspan="3" bgcolor="#DCEFEA" align="left">
+                Autos actualmente estacionados
+            </th>
+        </tr>
+
+        <tr>
+            <th>Ítem</th>
+            <th>Placa</th>
+            <th>Hora de entrada</th>
+        </tr>
+    </thead>
+
+    <tbody id="tb-estacionados">
+    </tbody>
+
+    <tbody>
+        <tr>
+            <td colspan="2" bgcolor="#FCEBD8">Autos estacionados:</td>
+            <td align="right">
+                <input type="number" id="txt-estacionados" readonly placeholder="0">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" bgcolor="#FCEBD8">Total cobrado en el día ($):</td>
+            <td align="right">
+                <input type="number" id="txt-total-cobrado" readonly placeholder="0.00">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" bgcolor="#F3F5F7" id="td-ultimo-cobro">
+                Último cobro: ninguno
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="./src/app.js"></script>
+</body>
+</html>
