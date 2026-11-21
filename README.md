@@ -3,7 +3,7 @@
 
 - [Ejercicio 1 - Simulador de factura de ventas](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio1/)
 - [Ejercicio 2 - Cajero bancario inteligente](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio2/)
-- [Ejercicio 3 - Turnos con Prioridades en Clinica](https://Elmejor56J/ejercicio-vectores-web/tree/main/ejercicio3)
+- [Ejercicio 3 - Turnos con Prioridades en Clinica](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio3/)
 - [Ejercicio 4 - Control pedidos e inventario restaurante](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio4/)
 - [Ejercicio 5 - Control de Parqueadero con Cobro por Hora](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio5/)
 - [Ejercicio 6 - Registro de Calificaciones con Estadísticas](https://elmejor56j.github.io/ejercicio-vectores-web/ejercicio6/)
