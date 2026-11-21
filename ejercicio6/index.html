@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de calificaciones con estadísticas</title>
+
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+            margin: 0;
+        }
+
+        td {
+            height: 20px;
+        }
+
+        .tabla-superior {
+            width: 60%;
+            min-width: 700px;
+        }
+
+        .tabla-detalle {
+            width: 60%;
+            min-width: 700px;
+            margin-top: 0;
+            table-layout: fixed;
+        }
+
+        .tabla-detalle th,
+        .tabla-detalle td {
+            height: 30px;
+        }
+
+        .tabla-detalle th:nth-child(1) {
+            width: 10%;
+        }
+
+        .tabla-detalle th:nth-child(2) {
+            width: 40%;
+        }
+
+        .tabla-detalle th:nth-child(3) {
+            width: 25%;
+        }
+
+        .tabla-detalle th:nth-child(4) {
+            width: 25%;
+        }
+
+        /* Campos de texto y números al 100% de su celda */
+        input[type="text"],
+        input[type="number"] {
+            width: 98%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+<table border="1" class="tabla-superior">
+    <thead>
+        <tr>
+            <th colspan="5" bgcolor="#DCE8F5">
+                Registro de calificaciones con estadísticas
+            </th>
+        </tr>
+
+        <tr>
+            <td>Estudiante:</td>
+            <td>
+                <input type="text" name="nombre" id="txt-nombre" placeholder="Ejemplo: Ana">
+            </td>
+            <td>Nota (0 - 10):</td>
+            <td>
+                <input type="number" name="nota" id="txt-nota" placeholder="Ejemplo: 9" min="0" max="10" step="0.01">
+            </td>
+            <td align="center">
+                <button id="btn-agregar">Agregar</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="5" align="center">
+                <button id="btn-calcular">Calcular estadísticas</button>
+            </td>
+        </tr>
+    </thead>
+</table>
+
+<table border="1" class="tabla-detalle">
+    <thead>
+        <tr>
+            <th colspan="4" bgcolor="#DCEFEA" align="left">
+                Lista de estudiantes
+            </th>
+        </tr>
+
+        <tr>
+            <th>Ítem</th>
+            <th>Estudiante</th>
+            <th>Nota</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+
+    <tbody id="tb-estudiantes">
+    </tbody>
+
+    <tbody>
+        <tr>
+            <td colspan="3" bgcolor="#FCEBD8">Promedio general:</td>
+            <td align="right">
+                <input type="number" id="txt-promedio" readonly placeholder="0.00">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" bgcolor="#FCEBD8">Nota más alta:</td>
+            <td align="right">
+                <input type="number" id="txt-nota-maxima" readonly placeholder="0.00">
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" bgcolor="#FCEBD8">Estudiante con la nota más alta:</td>
+            <td align="right">
+                <input type="text" id="txt-mejor-estudiante" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" bgcolor="#FCEBD8">Porcentaje de aprobados (nota &ge; 7) %:</td>
+            <td align="right">
+                <input type="number" id="txt-porcentaje" readonly placeholder="0.00">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="./src/app.js"></script>
+</body>
+</html>
